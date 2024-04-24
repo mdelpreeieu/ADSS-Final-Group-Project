@@ -9,4 +9,4 @@ This web page had to be developed using PythonAnywhere with Python version 3.10.
 3. Finally upload the index.html file to the templates folder within the website directories in PythonAnywhere, which will consequently run the app.
 
 # Use:
-Replace any _name_ in the code with the name of your app
+Replace any "_name_" in the code with the name of your app
