@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Cryptocurrency Searcher</title>
+    <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/landing-page.min.css" rel="stylesheet">
+    <style>.table { color: white; }</style>
+</head>
+<body>
+
+<header class="masthead text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 mx-auto">
+                <h1 class="mb-5">Cryptocurrency Searcher</h1>
+            </div>
+            <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+                <form method="GET" action="/crypto">
+                    <div class="form-row">
+                        <div class="col-12 col-md-9 mb-2 mb-md-0">
+                            <input type="text" name="cryptocode" list="browsers" class="form-control form-control-lg" placeholder="Please type the crypto ticker..">
+                            <datalist id="browsers">
+                                {% for i in ids %}
+                                    <option value="{{ df['Symbol'].iloc[i] }}">{{ df['Symbol'].iloc[i] }} - {{ df['Name'].iloc[i] }}</option>
+                                {% endfor %}
+                            </datalist>
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">Search</button>
+                        </div>
+                    </div>
+                    <div class="checkbox mt-3">
+                        <label>
+                            <input type="checkbox" value="yes" name="JSON"> Check for JSON (default HTML)
+                        </label>
+                        <label class="ml-3">
+                            <input type="checkbox" value="yes" name="model"> Check for model (default without model)
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/static/vendor/jquery/jquery.min.js"></script>
+
+</body>
+</html>
